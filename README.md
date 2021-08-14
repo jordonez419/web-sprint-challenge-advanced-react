@@ -40,9 +40,9 @@ You will also need to build the two tests in the `CheckoutForm.test.js` file and
 
   Display a list of the plants from the server. This should be done in the class component `PlantList`. **Unlike other projects, the local server used here can not be accessed through the browser. It is started automatically and without the need for starting a server.js file. Feel free to ignore any messages related to MSW or mock service workers. For this and the rest of your sprint challenges, test the functioning of the server directly through your axios calls.**
 
-* [ ] In the `PlantList` class component, fetch data from the server you now have running - the data can be fetched from `http://localhost:3333/plants.`
-* [ ] Set the data to a state property called `this.state.plants.`
-* [ ] The render function is already built and styled. Once the data is on the state, you will see the list of plants, and you will have the functionality to add a plant to the cart.
+* [x ] In the `PlantList` class component, fetch data from the server you now have running - the data can be fetched from `http://localhost:3333/plants.`
+* [ x] Set the data to a state property called `this.state.plants.`
+* [ x] The render function is already built and styled. Once the data is on the state, you will see the list of plants, and you will have the functionality to add a plant to the cart.
 
 #### Shopping Cart
 
@@ -52,14 +52,14 @@ You will also need to build the two tests in the `CheckoutForm.test.js` file and
 
   The form is working, but it is currently controlled by local stateful logic. We want to control this form with a custom hook.
 
-* [ ] Build a custom hook called `useForm`, and use it in your CheckoutForm component to control the form's stateful logic.
-* [ ] You built a useForm hook in the guided project this week. You will probably need to use that as a guide to complete this step. However, try and build it out first before you peek at the guided project. And *do not* copy/paste directly from the guided project!_
+* [ x] Build a custom hook called `useForm`, and use it in your CheckoutForm component to control the form's stateful logic.
+* [ x] You built a useForm hook in the guided project this week. You will probably need to use that as a guide to complete this step. However, try and build it out first before you peek at the guided project. And *do not* copy/paste directly from the guided project!_
 
 #### Testing the Checkout Form
-* [ ] Run the test runner and ensure that `src/components/CheckoutForm.test.js` is correctly called.
-* [ ] Fill out code necessary to test that that Checkout form renders without errors.
-* [ ] Fill out code necessary to test that when all form inputs are filled with valid data, a success message appears.
-* [ ] Make sure the tests are passing, and make sure you can cause the tests to fail purposefully, so that you know the tests are truly working.
+* [ x] Run the test runner and ensure that `src/components/CheckoutForm.test.js` is correctly called.
+* [ x] Fill out code necessary to test that that Checkout form renders without errors.
+* [x ] Fill out code necessary to test that when all form inputs are filled with valid data, a success message appears.
+* [ x] Make sure the tests are passing, and make sure you can cause the tests to fail purposefully, so that you know the tests are truly working.
 
 **Notes:**
 * Again, unlike other projects, the local server used here can not be accessed through the browser. For this and the rest of your sprint challenges, test the functioning of the server directly through your axios calls.
@@ -104,8 +104,24 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. What are the main differences between a stateful and a functional component?
 
+The main difference is that a stateful component deals directly with the current state of data that component is using to render things,
+while a functional component (which can also be stateful if desired) is simply just rendering what we tell it to regardless of the state.
+In other words, one deals and handles our state, the other doesnt.
+
 2. When does a componentWillMount function be called? What about a componentWillUpdate?
+
+ComponentWillMount is basically the class component equivalent of the useEffect clean up function, it cleans up any neccesary things(like event listeners to prevent bubbling).
+
+ComponentWillUpdate is used for any preparation code that will happen before the render.
 
 3. Define stateful logic.
 
+Stateful logic is any code that will be run or used to handle state changes, an example of this is the common handleChanges and handleSubmit functions we create all the time to make our forms stateful
+
 4. What are the three step of creating a successful test? What is done in each phase?
+
+Arrange: Here we arrange and define all the elements we will be instructing our test to interact with (For example, making a variable that represents the first name input in a form)
+
+Act: Now that we have our test elements defined, we will instruct the tester to interact with them (Like making it click a button, or type something on a field)
+
+Assert: Now that our action has happened, we are declaring what we expect to happen as a result of that action. (Like expecting an error message to appear if a user typed an invalid email in the)
